@@ -34,6 +34,8 @@ margin-top: -10%;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(350px,0.5fr));
 max-width:1600px;
+margin-left: auto;
+margin-right: auto;
 gap: 10px;
 place-items: center;
 }
