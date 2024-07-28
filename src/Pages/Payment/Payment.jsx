@@ -65,6 +65,7 @@ function Payment() {
           amount: paymentIntent.amount,
           created: paymentIntent.created,
         });
+        setProcessing(false);
       console.log(paymentIntent.amount);
       // empty the basket
       dispatch({ type: Type.EMPTY_BASKET });
