@@ -17,9 +17,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 const stripePromise = loadStripe(
-  "pk_test_51PfJOz2L6gTqOku4AV3xj1mTFYjHVPBaKtfdU2N3N1WfhEFISbhtF5CQodXTBoXVwBFvJcbgl2IeoYGPM7JdZ1iD007pysgEKp"
+  "ppk_test_51PhR6lRq1vjZVh7Ah1icjItMebNmJEAHzZiNXGMRfk5x6SiXYKd39VyiAehkJ7Xx6pglpRBOGsMsgpBj68YDCqLK00UISa7343"
 );
-
 function Routing() {
   return (
     <Router>
@@ -58,15 +57,6 @@ function Routing() {
   );
 }
 export default Routing;
-
-
-
-
-
-
-
-
-
 
 // Router with including payment and orders functinality
 
