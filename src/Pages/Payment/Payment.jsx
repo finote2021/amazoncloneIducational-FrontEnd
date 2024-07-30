@@ -13,7 +13,7 @@ import { Type } from "../../Utility/action.type";
 
 function Payment() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
-  console.log(user);
+  // console.log(user);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -30,7 +30,7 @@ function Payment() {
   }, 0);
 
   const handleChange = (e) => {
-    console.log(e);
+    // console.log(e);
     e?.error?.message ? setCardError(e?.error?.message) : setCardError("");
   };
 
@@ -45,7 +45,7 @@ function Payment() {
         url: `/payment/create?total=${total * 100}`,
       });
       const { clientSecret } = response.data;
-      console.log(clientSecret);
+      // console.log(clientSecret);
       // 2. Client-side (React side) confirmation
       const { paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -53,7 +53,7 @@ function Payment() {
         },
       });
 
-      console.log(paymentIntent);
+      // console.log(paymentIntent);
       // 3. After the confirmation ---> order Firestore database save, clear basket
       await db
         .collection("users")
@@ -66,7 +66,7 @@ function Payment() {
           created: paymentIntent.created,
         });
         setProcessing(false);
-      console.log(paymentIntent.amount);
+      // console.log(paymentIntent.amount);
       // empty the basket
       dispatch({ type: Type.EMPTY_BASKET });
       setProcessing(false);

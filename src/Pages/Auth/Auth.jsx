@@ -24,13 +24,13 @@ function Auth() {
   const [{ user }, dispatch] = useContext(DataContext);
   const navigate = useNavigate();
   const navStateData = useLocation();
-  console.log(navStateData);
+  // console.log(navStateData);
 
   // console.log(user);
 
   const authHandler = async (e) => {
     e.preventDefault();
-    console.log(e.target.name);
+    // console.log(e.target.name);
     if (e.target.name == "signin") {
       // firebase auth
       setLoading({ ...loading, signIn: true });
