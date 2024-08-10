@@ -1,5 +1,3 @@
-
-
 import React, { useContext } from "react";
 import Layout from "../../components/LayOut/LayOut";
 import { DataContext } from "../../components/DataProvider/DataProvider";
@@ -31,8 +29,6 @@ function Cart() {
     });
   };
 
-  // console.log(basket);
-
   return (
     <Layout>
       <section className="container">
@@ -43,18 +39,17 @@ function Cart() {
           {basket?.length === 0 ? (
             <p>Opps! No item in your cart</p>
           ) : (
-            basket?.map((item, i) => {
+            basket?.map((item, index) => {
               return (
-                <section className="cart_product">
+                <section key={index} className="cart_product">
                   <ProductCard
-                    key={i}
                     product={item}
-                     renderDesc={true}
+                    renderDesc={true}
                     renderAdd={true}
                     flex={true}
                   />
                   <div className="btn_container">
-                    <button className="btn" onClick={() => increment(item.id)}>
+                    <button className="btn" onClick={() => increment(item)}>
                       <IoIosArrowUp size={20} />
                     </button>
                     <span>{item.amount}</span>
